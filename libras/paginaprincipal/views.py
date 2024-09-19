@@ -6,10 +6,15 @@ from django.template.loader import render_to_string
 # Create your views here.
 
 
-class teste(APIView):
+class teste(TemplateView):
 
-    def get(self, request):
-        return Response('hi mizera')
+    template_name = 'paginaprincipal/html/sinal.html'
+
+
+class main(TemplateView):
+
+    template_name = 'paginaprincipal/html/index.html'
+
     
 
 def teste_view(request):

@@ -1,0 +1,3 @@
+django (inserir versão)
+djangorestframework (inserir versão)
+psycopg2 (inserir versão)
