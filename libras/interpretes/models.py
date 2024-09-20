@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Interprete(models.Model):
@@ -9,8 +10,8 @@ class Interprete(models.Model):
     sinalInterprete = models.CharField()
 
     class Meta:
-        verbose_name = _("Interprete")
-        verbose_name_plural = _("Interpretes")
+        verbose_name = ("Interprete")
+        verbose_name_plural = ("Interpretes")
 
     def __str__(self):
         return self.name

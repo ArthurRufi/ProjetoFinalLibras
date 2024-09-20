@@ -18,4 +18,4 @@ class main(TemplateView):
     
 
 def teste_view(request):
-    return render(request, 'paginaprincipal/html/index.html')
+    return render(request, 'paginaprincipal/html/cursos.html')

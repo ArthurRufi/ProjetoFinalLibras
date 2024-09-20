@@ -38,10 +38,31 @@
 }
 
 .cabecalho {
+    display: flex;            
+    justify-content: space-between;  
+    align-items: center;     
+    padding: 10px;            
     width: 100%;
     height: 100px;
     background-color: var(--secondary-color);
     margin-right: 0;
+}
+
+.icon-menu {
+    text-align: left;        
+}
+
+.nome-central {
+    margin: 0 auto;         
+    text-align: center;   
+    font-family: var(--font-family-primary); 
+    font-size: var(--font-size-primary);  
+}
+
+.item-lateral {
+    text-align: right;      
+    font-family: var(--font-family-primary); 
+    font-size: var(--font-size-primary);
 }
 
 .controle-inicio {
