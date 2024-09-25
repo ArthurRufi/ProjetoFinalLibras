@@ -6,37 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glossario Libras</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    
 </head>
 <body class="corpo">
     <header class="cabecalho">
-        <div class="icon-menu">...</div>
+        <a href="{% url "main" %}"><div class="icon-menu" ></div></a>
         <div class="nome-central">Glossario Libras</div>
-        <div class="item-lateral">Lateral</div>
+        <a href="{% url "main" %}"><div class="icon-home" ></div></a>
     </header>
     <div class="controle-inicio">
         <div class="inicio">
-            <div class="guia-inicio-libras">
-                <p>aqui vai o video descrevendo o guia portugues</p>
-            </div>
-            <div class="guia-inicio-portugues">
-                <p>aqui vai o guia em portugues</p>
+            <div class="itens">
+                {% for sinal in sinais %}
+                <div class="item">
+                    
+                        <a class="link" href="{% url 'teste_view' sinal.nome 'descricao' %}">
+                            <p>{{ sinal.nome }}</p>
+                        </a>      
+                </div>
+                {% endfor %}
             </div>
         </div>
         <div class="texto-lateral-inicio"></div>
     </div>
-    <div class="linha-2"></div>
-    <div class="linha-1"></div>
-    <div class="linha-2"></div>
-    <div class="itens">
-        {% for sinal in sinais %}
-        <div class="item">
-            
-                <a class="link" href="{% url 'teste_view' sinal.nome 'descricao' %}">
-                    <p>{{ sinal.nome }}</p>
-                </a>      
-        </div>
-        {% endfor %}
-    </div>
+    
+    
 
     <footer class="cabecalho-inferior">
     </footer>

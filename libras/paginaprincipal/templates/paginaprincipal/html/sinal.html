@@ -9,22 +9,27 @@
 </head>
 <body class="corpo">
     <header class="cabecalho">
-        <div class="icon-menu">...</div>
+        <a href="{% url "main" %}"><div class="icon-menu" ></div></a>
         <div class="nome-central">{{ obter_objeto.nome }}</div>
-        <div class="item-lateral">Sinal</div>
+        <a href="{% url "main" %}"><div class="icon-home" ></div></a>
     </header>
     <div class="controle-inicio">
         <div class="opcaoselecionada">
             <!-- adicionar lógica if -->
         {% if op == 'descricao' %}
-            <video width="320" height="240" controls>
-                <source src="{{ obter_objeto.conceito }}" type="video/mp4">
+            <div class="text-container">
+                <p>{{obter_objeto.descricao}}</p>
+            </div>
+        {% elif op == 'sinal' %}
+            <video controls>
+                <source src="{{obter_objeto.sinal.url}}" type="video/mp4">
                 Seu navegador não suporta o vídeo.
             </video>
-        {% elif op == 'sinal' %}
-            <p>sinal</p>
         {% elif op == 'conceito' %}
-            <p>conceito</p>
+            <video controls>
+                <source src="{{obter_objeto.conceito.url}}" type="video/mp4">
+                Seu navegador não suporta o vídeo.
+            </video>
         {% else %}
             <p>Nada encontrado</p>
         {% endif %}

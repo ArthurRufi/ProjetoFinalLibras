@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from django.views.generic import TemplateView, DetailView
 from django.template.loader import render_to_string
 from sinal.models import Sinal
+import time
 # Create your views here.
 
 class SinalDetailView(DetailView):
@@ -26,7 +27,7 @@ class SinalDetailView(DetailView):
 def testegeral(request, nome, opcao):
     nomeobj = nome
     op = opcao
-    print(nomeobj)
+    
     try:
         obter_objeto = Sinal.objects.get(nome=nomeobj)
         print(nome)

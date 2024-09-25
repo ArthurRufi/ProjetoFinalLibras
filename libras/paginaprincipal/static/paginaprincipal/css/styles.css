@@ -4,11 +4,13 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
 :root {
     --primary-color: #ffffec;
     --secondary-color: #84b6f4;
     --tertiary-color: #ebf3a0;
-    --font-family-primary: Constantia;
+    --font-family-primary: "Concert One", sans-serif; /* Corrigido */
     --font-size-primary: 30px;
     --font-size-secondary: 20px;
 }
@@ -49,7 +51,21 @@
 }
 
 .icon-menu {
-    text-align: left;        
+    width: 50px; /* Definir a largura da div */
+    height: 50px; /* Definir a altura da div */
+    background-image: url('/media/icons/menu.png');
+    background-size: contain; /* Ajusta o tamanho da imagem ao conteúdo */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-position: center; /* Centraliza a imagem dentro da div */
+}
+
+.icon-home {
+    width: 50px; /* Definir a largura da div */
+    height: 50px; /* Definir a altura da div */
+    background-image: url('/media/icons/home.png');
+    background-size: contain; /* Ajusta o tamanho da imagem ao conteúdo */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-position: center; /* Centraliza a imagem dentro da div */
 }
 
 .nome-central {
@@ -84,6 +100,10 @@
     overflow-x: auto;
     margin-left: 10px;
     border-radius: 5px;
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 10px; /* Adicionando espaçamento interno */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    border: 1px solid black;
 }
 
 .inicio::-webkit-scrollbar {
@@ -126,17 +146,17 @@
 }
 
 .guia-inicio-portugues::-webkit-scrollbar {
-    width: 12px;
+    width: 20px;
 }
 
 .guia-inicio-portugues::-webkit-scrollbar-track {
     background: var(--tertiary-color);
-    border-radius: 10px;
+   
 }
 
 .guia-inicio-portugues::-webkit-scrollbar-thumb {
     background: #84b6f4;
-    border-radius: 10px;
+   
 }
 
 .guia-inicio-portugues::-webkit-scrollbar-thumb:hover {
@@ -208,10 +228,27 @@
     background-color: var(--tertiary-color);
     border: 1px solid black;
     border-radius: 8px; /* Bordas arredondadas */
-    padding: 20px; /* Adicionando espaçamento interno */
+    padding: 10px; /* Adicionando espaçamento interno */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
 }
+.opcaoselecionada video{
+    width: 100%; /* O vídeo ocupará 100% da largura da div mãe */
+    height: 100%; /* Mantém a proporção do vídeo */
+    border-radius: 8px;
+}
 
+.text-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-height: 400px; /* Limita a altura */
+    overflow-y: auto;  /* Adiciona rolagem caso o texto seja muito longo */
+    word-wrap: break-word; /* Quebra palavras longas */
+    overflow-wrap: break-word;
+}
 .botoes-laterais{
     width: 300px;
     height:550px;
@@ -226,6 +263,9 @@
     background-color: var(--secondary-color);
     margin-left: 10px;
     margin-bottom: 25px;
+    padding: 10px; /* Adicionando espaçamento interno */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    border: 1px solid black;
 }
 .div-texto-opcao {
     display: flex;
