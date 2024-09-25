@@ -1,10 +1,12 @@
 from django.urls import path
-from .views import teste, teste_view, main
+from .views import SinalDetailView, teste_view, main, testegeral
 
 
 
 urlpatterns = [
-    path('sinal/', teste.as_view(), name='sinal'),
-    path('teste/', teste_view, name='teste_view'),
-    path('', main.as_view())
+    path('sinal/<str:nome>', SinalDetailView.as_view(), name='sinal'),
+    path('teste/<str:nome>/<str:opcao>', testegeral, name='teste_view'),
+    path('teste/<str:nome>', testegeral, name='teste_view_sinal'),
+ 
+    path('', main, name='main')
 ]

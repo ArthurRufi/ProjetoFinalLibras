@@ -22,7 +22,7 @@ class Curso(models.Model):
     quantidadeDeSinais = models.IntegerField()
 
 
-class Curso(models.Model):
+class Graduacao(models.Model):
     name = models.CharField()
     #elaborar a logica baseado na quantidade de sinais e isso deve-se ser considerado como não dinamico, ou seja NAO PRECISA ATUALIZAR SEMPRE PORRA
     quantidadeDeSinais = models.IntegerField()

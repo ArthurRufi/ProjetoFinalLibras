@@ -141,3 +141,7 @@ GitHub.sublime-settings
 migrations/
 
 card.txt
+
+videos.zip
+*.mp4
+*.mov

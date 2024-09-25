@@ -5,38 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sinal</title>
-    <link rel="stylesheet" href={% static "styles.css" %}>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body class="corpo">
     <header class="cabecalho">
         <div class="icon-menu">...</div>
-        <div class="nome-central">Nome Meio do meio</div>
+        <div class="nome-central">{{ obter_objeto.nome }}</div>
         <div class="item-lateral">Sinal</div>
     </header>
     <div class="controle-inicio">
         <div class="opcaoselecionada">
             <!-- adicionar lógica if -->
+        {% if op == 'descricao' %}
+            <video width="320" height="240" controls>
+                <source src="{{ obter_objeto.conceito }}" type="video/mp4">
+                Seu navegador não suporta o vídeo.
+            </video>
+        {% elif op == 'sinal' %}
+            <p>sinal</p>
+        {% elif op == 'conceito' %}
+            <p>conceito</p>
+        {% else %}
+            <p>Nada encontrado</p>
+        {% endif %}
         </div>
         <div class="botoes-laterais">
             <div class="botaoopcao">
-                <div class="div-texto-opcao">
-                    <p class="texto-opcao">Descrição</p>
-                </div>
+                <a class="link" href="{% url 'teste_view' obter_objeto.nome 'descricao' %}">
+                    <div class="div-texto-opcao">
+                        <p class="texto-opcao">Descrição</p>
+                    </div>
+                </a>
             </div>
             <div class="botaoopcao">
-                <a href="{% url 'teste_view' %}">
+                <a class="link" href="{% url 'teste_view' obter_objeto.nome 'conceito' %}">
                     <div class="div-texto-opcao">
                         <p class="texto-opcao">Conceito</p>
                     </div>
                 </a>
             </div>
-            <!-- Corrigido fechamento da div -->
             <div class="botaoopcao">
-                <div class="div-texto-opcao">
-                    <p class="texto-opcao">Sinal</p>
-                </div>
+                <a class="link" href="{% url 'teste_view' obter_objeto.nome 'sinal' %}">
+                    <div class="div-texto-opcao">
+                        <p class="texto-opcao">Sinal</p>
+                    </div>
+                </a>
             </div>
         </div>
+        
     </div>
 
     <footer class="cabecalho-inferior"></footer>
