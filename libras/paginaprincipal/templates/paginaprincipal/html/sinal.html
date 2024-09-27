@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sinal</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 </head>
 <body class="corpo">
     <header class="cabecalho">
@@ -30,6 +32,10 @@
                 <source src="{{obter_objeto.conceito.url}}" type="video/mp4">
                 Seu navegador não suporta o vídeo.
             </video>
+        {% elif op == 'qrcode' %}
+            <a class="link" href="{% url 'teste_view' obter_objeto.nome 'sinal' %}">
+                <div id="qrcode"></div>
+            </a>
         {% else %}
             <p>Nada encontrado</p>
         {% endif %}
@@ -56,10 +62,33 @@
                     </div>
                 </a>
             </div>
+            <div class="botaoopcao">
+                <a class="link" href="{% url 'teste_view' obter_objeto.nome 'qrcode' %}">
+                    <div class="div-texto-opcao">
+                        <a class="link" href="{% url 'teste_view' obter_objeto.nome 'qrcode' %}">
+                            <p class="texto-opcao">Qrcode</p>
+                        </a>
+                    </div>
+                </a>
+            </div>
         </div>
         
     </div>
 
     <footer class="cabecalho-inferior"></footer>
+    <script>
+        window.onload = function () {
+            // Obtém o URL dinamicamente a partir do link gerado
+            var linkElement = document.querySelector('.link');
+            var linkUrl = linkElement.getAttribute('href');
+
+            // Gera o QR Code usando o URL do link
+            new QRCode(document.getElementById("qrcode"), {
+                text: linkUrl,  // Usando o href como o conteúdo do QR Code
+                width: 500,     // Largura do QR code
+                height: 500,    // Altura do QR code
+            });
+        };
+    </script>
 </body>
 </html>

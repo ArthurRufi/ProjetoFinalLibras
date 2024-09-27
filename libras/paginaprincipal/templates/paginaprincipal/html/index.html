@@ -6,33 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glossario Libras</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-    
 </head>
 <body class="corpo">
     <header class="cabecalho">
-        <a href="{% url "main" %}"><div class="icon-menu" ></div></a>
+        <a href="{% url "main" %}"><div class="icon-menu"></div></a>
         <div class="nome-central">Glossario Libras</div>
-        <a href="{% url "main" %}"><div class="icon-home" ></div></a>
+        <a href="{% url "admin:index" %}"><div class="icon-login"></div></a>
     </header>
     <div class="controle-inicio">
         <div class="inicio">
             <div class="itens">
                 {% for sinal in sinais %}
                 <div class="item">
-                    
-                        <a class="link" href="{% url 'teste_view' sinal.nome 'descricao' %}">
-                            <p>{{ sinal.nome }}</p>
-                        </a>      
+                    <a class="link" href="{% url 'teste_view' sinal.nome 'descricao' %}">
+                        <p class="nomesinal">{{ sinal.nome }}</p>
+                    </a>      
                 </div>
                 {% endfor %}
             </div>
         </div>
-        <div class="texto-lateral-inicio"></div>
+        <div class="texto-lateral-inicio">
+            <div class="titulo-texto-lateral">aba pai</div>
+            <div class="itens-texto-lateral">
+                <div class="texto-lateral"></div>
+            </div>
+        </div>
     </div>
-    
-    
-
-    <footer class="cabecalho-inferior">
-    </footer>
+    <footer class="cabecalho-inferior"></footer>
 </body>
 </html>

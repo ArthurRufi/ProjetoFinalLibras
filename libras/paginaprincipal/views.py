@@ -37,10 +37,10 @@ def testegeral(request, nome, opcao):
 
 
 def main(request):
-    sinais = Sinal.objects.all()
+    # Ordenando os sinais em ordem alfabética
+    sinais = Sinal.objects.all().order_by('nome')
     template_name = 'paginaprincipal/html/index.html'
     return render(request, template_name, {'sinais': sinais})
-
 
 def teste_view(request):
     return render(request, 'paginaprincipal/html/cursos.html')
