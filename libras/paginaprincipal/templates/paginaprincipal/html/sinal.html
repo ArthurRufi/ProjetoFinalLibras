@@ -78,17 +78,22 @@
     <footer class="cabecalho-inferior"></footer>
     <script>
         window.onload = function () {
-            // Obtém o URL dinamicamente a partir do link gerado
-            var linkElement = document.querySelector('.link');
-            var linkUrl = linkElement.getAttribute('href');
-
-            // Gera o QR Code usando o URL do link
-            new QRCode(document.getElementById("qrcode"), {
-                text: linkUrl,  // Usando o href como o conteúdo do QR Code
-                width: 500,     // Largura do QR code
-                height: 500,    // Altura do QR code
-            });
+            // Seleciona o link específico que você deseja usar para o QR Code
+            var linkElement = document.querySelector('.botaoopcao a[href*="qrcode"]'); // Seleciona o link correto para QR Code
+            if (linkElement) {
+                var linkUrl = window.location.origin + linkElement.getAttribute('href'); // Inclui o domínio
+        
+                // Gera o QR Code com o domínio correto
+                new QRCode(document.getElementById("qrcode"), {
+                    text: linkUrl,  // URL completa com o domínio
+                    width: 500,
+                    height: 500,
+                });
+            } else {
+                console.error("Link para o QR Code não encontrado.");
+            }
         };
+        
     </script>
 </body>
 </html>
