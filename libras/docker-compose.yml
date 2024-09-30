@@ -2,7 +2,7 @@
 services:
   web:
     build: 
-      context: ./libras  # Certifique-se de que o contexto está correto
+      context: .  # Certifique-se de que o contexto está correto
       dockerfile: Dockerfile  # Opcional se o arquivo estiver nomeado como Dockerfile
     ports:
       - "8000:8000"
