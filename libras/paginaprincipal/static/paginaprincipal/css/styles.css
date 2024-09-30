@@ -100,17 +100,14 @@
 
 .inicio {
     width: 900px;
-    height: 700px;
+    height: 700px; /* Ajuste a altura conforme necessário */
     background-color: var(--tertiary-color);
     margin-top: 0;
     margin-right: 0;
-    overflow-x: auto;
     margin-left: 10px;
-    border-radius: 5px;
-    border-radius: 8px; /* Bordas arredondadas */
-    padding: 10px; /* Adicionando espaçamento interno */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
-    border: 1px solid black;
+    border-radius: 8px; 
+    padding: 0; /* Remova o padding para evitar espaçamento */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .inicio::-webkit-scrollbar {
@@ -338,4 +335,10 @@
     display: flex; /* Garantir que o conteúdo dentro da div se ajuste corretamente */
     justify-content: center;
     align-items: center;
+}
+.videoapresentacao {
+    width: 100%; /* O vídeo ocupará 100% da largura da div mãe */
+    height: 100%; /* O vídeo ocupará 100% da altura da div mãe */
+    border-radius: 8px; /* Borda arredondada opcional */
+    object-fit: cover; /* Ajusta a escala do vídeo para preencher a div */
 }

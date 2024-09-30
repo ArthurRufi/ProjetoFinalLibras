@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1  # Mantenha DEBUG como 1 para desenvolvimento
+      - DJANGO_SECRET_KEY='+pyt!z6b!k&0ynd+0#t!7jn1@s!d+faxx!=v4@2d9zx&6)su(p'  # Certifique-se de que esta é a sua chave secreta
+      - DATABASE_URL='postgres://arthur:86128931@db:5432/projetolibras'  # Modifique conforme necessário
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=projetolibras  # Nome do banco de dados
+      - POSTGRES_USER=arthur  # Nome do usuário do banco de dados
+      - POSTGRES_PASSWORD=86128931  # Senha do usuário do banco de dados

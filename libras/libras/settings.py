@@ -22,8 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+SECRET_KEY = config('SECRET_KEY', default='+pyt!z6b!k&0ynd+0#t!7jn1@s!d+faxx!=v4@2d9zx&6)su(p')
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '*']

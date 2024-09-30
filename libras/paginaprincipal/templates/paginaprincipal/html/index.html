@@ -15,20 +15,22 @@
     </header>
     <div class="controle-inicio">
         <div class="inicio">
-            <div class="itens">
-                {% for sinal in sinais %}
-                <div class="item">
-                    <a class="link" href="{% url 'teste_view' sinal.nome 'descricao' %}">
-                        <p class="nomesinal">{{ sinal.nome }}</p>
-                    </a>      
-                </div>
-                {% endfor %}
-            </div>
+            
+            <video controls class="videoapresentacao">
+                <source src="media/videos/Apresentação.mp4" type="video/mp4">
+                Seu navegador não suporta o vídeo.
+            </video>
+        
         </div>
         <div class="texto-lateral-inicio">
-            <div class="titulo-texto-lateral">aba pai</div>
+            <div class="titulo-texto-lateral">Sinais mais acessados</div>
             <div class="itens-texto-lateral">
-                <div class="texto-lateral"></div>
+                {% for sinal in sinais %}
+                    <a class="link" href="{% url 'teste_view' sinal.nome 'descricao' %}">
+                        <div class="texto-lateral">{{ sinal.nome }}</div>
+                    </a>      
+                {% endfor %}
+                
             </div>
         </div>
     </div>
