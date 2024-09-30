@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   web:
-    build: .
+    build: 
+      context: ./libras  # Certifique-se de que o contexto está correto
+      dockerfile: DockerFile  # Opcional se o arquivo estiver nomeado como Dockerfile
     ports:
       - "8000:8000"
     environment:
