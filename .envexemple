@@ -1,0 +1,9 @@
+SECRET_KEY='+pyt!z6b!k&0ynd+0#t!7jn1@s!d+faxx!=v4@2d9zx&6)su(p'
+DEBUG=False
+DB_NAME=projetolibras
+DB_USER=arthur
+DB_PASSWORD=86128931
+DB_HOST=localhost
+DB_PORT=5432
+
+
