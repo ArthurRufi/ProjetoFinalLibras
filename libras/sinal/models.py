@@ -14,6 +14,7 @@ class Sinal(models.Model):
     descricao = models.TextField()
     conceito = models.FileField(upload_to='conceitos/', default='conceitos/null.mp4')
     sinal = models.FileField(upload_to='sinais/', default='sinal/null.mp4')
+    qunatidadeDeAcesso = models.IntegerField(default=0)
     
 
     class Meta:
